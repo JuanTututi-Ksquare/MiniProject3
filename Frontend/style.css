@@ -76,6 +76,12 @@ textarea:focus, input:focus{
   box-shadow: 0px 0px 10px black;
   outline: none;
 }
+.grays{
+  font-size: 14px;
+  color: #F2F2F2;
+  text-decoration: underline;
+  font-weight: 800;
+}
 
 label{
   font-weight: bold;
