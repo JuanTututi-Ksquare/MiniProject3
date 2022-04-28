@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="global-container">
+      <div class="container-left">
+        <div class="container-form">
+          <h1>Welcome back</h1>
+          <form>
+            <div class="description">
+              <label for="description">
+                <h3>Description</h3>
+              </label>
+              <textarea class="input-border" rows="3"></textarea>
+            </div>
+
+            <div class="amount">
+              <label for="amount"><h3>Amount</h3></label>
+              <input class="input-border amount-input" type="number" />
+            </div>
+            <br />
+
+          </form>
+        </div>
+      </div>
+      <div class="container-right">
+        <div class="balance-container">
+          <div class="balance-items">
+            <h1>Current Balance</h1>
+          </div>
+          <div class="balance-items">
+            <p id="current-balance"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
