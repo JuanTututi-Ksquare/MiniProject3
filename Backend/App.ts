@@ -7,10 +7,15 @@ const PORT = 3000;
 const transactionHistory: Object[] = [];
 let currentBalance: number = 0;
 
-const addTransaction = (amount: number, description: string): void => {
+const addTransaction = (amount: number, description: string): boolean => {
   const objTransaction: Object = { amount, description };
-  transactionHistory.push(objTransaction);
-  currentBalance += amount;
+  if (amount < 0 && amount * -1 > currentBalance) {
+    return false;
+  } else {
+    currentBalance += amount;
+    transactionHistory.push(objTransaction);
+    return true;
+  }
 };
 //------------------------------End Points-----------------------------
 app.use(express.json());
@@ -21,10 +26,13 @@ app.get("/v1/balance", (req: express.Request, res: express.Response) => {
 
 app.post("/v1/transaction", (req, res) => {
   const body = req.body;
-  const amount:number = body.balance;
-  const description:string = body.description;
-  addTransaction(amount, description);
-  res.send("OK!");
+  const amount: number = body.balance;
+  const description: string = body.description;
+  if(addTransaction(amount, description)) {
+    res.send("OK!");
+  } else {
+    res.send("ERROR!");
+  }
 });
 
 server.listen(PORT, () => {
