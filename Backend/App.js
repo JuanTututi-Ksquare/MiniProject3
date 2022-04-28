@@ -13,11 +13,19 @@ let currentBalance = 0;
 const addTransaction = (amount, description) => {
     const objTransaction = { amount, description };
     transactionHistory.push(objTransaction);
+    currentBalance += amount;
 };
 //------------------------------End Points-----------------------------
 app.use(express_1.default.json());
 app.get("/v1/balance", (req, res) => {
     res.json({ currentBalance });
+});
+app.post("/v1/transaction", (req, res) => {
+    const body = req.body;
+    const amount = body.balance;
+    const description = body.description;
+    addTransaction(amount, description);
+    res.send("OK!");
 });
 server.listen(PORT, () => {
     console.log("server running on port " + PORT);
