@@ -28,7 +28,7 @@ app.use((_, res, next) => {
   res.set("Access-Control-Allow-Headers", "Content-Type");
   res.set("Access-Control-Allow-Methods", "GET, POST");
   next();
-})
+});
 
 app.get("/v1/balance", (req: express.Request, res: express.Response) => {
   res.json({ currentBalance });
