@@ -1,10 +1,10 @@
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #f5faff;
   margin: 0;
-  height:100vh;
+  height: 100vh;
 }
-.global-container{
+.global-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,12 +22,12 @@ body {
   height: 70%;
   width: 35%;
 }
-.container-form{
-  display: flex ;
+.container-form {
+  display: flex;
   flex: 0.8;
   flex-direction: column;
 }
-.balance{
+.balance {
   border: 0;
   border-radius: 15px;
   background-color: #ffa600;
@@ -56,34 +56,35 @@ body {
 textarea {
   resize: none;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-.btn-hover:hover{
+.btn-hover:hover {
   background-color: #363636;
   color: white;
   cursor: pointer;
 }
-.input-border{
+.input-border {
   border-radius: 5px;
   border: 0px;
   padding: 10px;
-  width:94%;
+  width: 94%;
 }
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   box-shadow: 0px 0px 10px black;
   outline: none;
 }
-.grays{
+.grays {
   font-size: 14px;
-  color: #F2F2F2;
+  color: #f2f2f2;
   text-decoration: underline;
   font-weight: 800;
 }
 
-label{
+label {
   font-weight: bold;
   font-size: 12px;
 }
@@ -97,7 +98,7 @@ label{
   height: 70%;
   width: 35%;
 }
-.balance-items{
+.balance-items {
   display: flex;
   justify-content: center;
 }
@@ -106,6 +107,6 @@ label{
   font-size: 45px;
 }
 
-.balance-container{
+.balance-container {
   margin: auto;
 }
