@@ -8,7 +8,7 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
 const PORT = 3000;
-const transactionHistory = [];
+let transactionHistory = [];
 let currentBalance = 0;
 const addTransaction = (amount, description) => {
     const objTransaction = { amount, description };
@@ -18,6 +18,7 @@ const addTransaction = (amount, description) => {
     else {
         currentBalance += amount;
         transactionHistory.push(objTransaction);
+        console.log(transactionHistory);
         return true;
     }
 };
@@ -36,6 +37,12 @@ app.post("/v1/transaction", (req, res) => {
     else {
         res.send("ERROR!");
     }
+});
+app.post("/v1/clear", (req, res) => {
+    currentBalance = 0;
+    transactionHistory = [];
+    console.log(transactionHistory);
+    res.send("Cleared");
 });
 server.listen(PORT, () => {
     console.log("server running on port " + PORT);
