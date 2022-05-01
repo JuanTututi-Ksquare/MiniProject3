@@ -16,16 +16,16 @@ body {
   background-color: #035397;
   box-shadow: 2px 2px 18px black;
   border-radius: 10px 0px 0px 10px;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
-  height: 70%;
+  height: 80%;
   width: 35%;
+  overflow: auto;
 }
 .container-form {
   display: flex;
   flex: 0.8;
   flex-direction: column;
+  margin: auto;
 }
 
 .buttons-container {
@@ -33,30 +33,25 @@ body {
   justify-content: space-between;
 }
 
-.balance {
+.buttons-container button{
   border: 0;
   border-radius: 15px;
-  background-color: #ffa600;
-  color: #000000;
+  text-transform: uppercase;
+  color: white;
   width: 40%;
-  box-shadow: 0px 5px 2px black;
   padding: 10px 15px;
   text-align: center;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 500;
+  text-shadow: #363636;
+}
+
+.balance {
+  background-color: #1FCEE9;
 }
 
 .submit {
-  border: 0;
-  border-radius: 15px;
-  background-color: #00ff40;
-  color: #000000;
-  width: 40%;
-  box-shadow: 0px 5px 2px black;
-  padding: 10px 15px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
+  background-color: #1DD66D;
 }
 
 textarea {
@@ -101,7 +96,7 @@ label {
   background-color: white;
   justify-content: center;
   padding: 20px;
-  height: 70%;
+  height: 80%;
   width: 35%;
 }
 .balance-items {
@@ -115,4 +110,58 @@ label {
 
 .balance-container {
   margin: auto;
+}
+
+.required {
+  border: 2px solid red;
+}
+
+.hidden {
+  display: none;
+}
+
+.warning {
+  text-align: center;
+  font-size: smaller;
+  background-color: red;
+  padding: 10px 0;
+  border-radius: 0px 0px 15px 15px;
+  max-width: 95%;
+  margin: 8px auto;
+}
+
+@media only screen and (max-width: 850px) {
+  .container-left {
+    padding: 20px;
+    height: 95%;
+    width: 45%;
+  }
+  .container-right {
+    padding: 20px;
+    height: 95%;
+    width: 45%;
+  }
+  .buttons-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .buttons-container button{
+    margin: 5px 0;
+  }
+}
+
+
+@media only screen and (max-width: 650px) {
+  .global-container {
+    flex-direction: column;
+  }
+
+  .global-container > div {
+    width: 95%;
+  }
+
+  .container-left {
+    height: 100%;
+  }
 }
