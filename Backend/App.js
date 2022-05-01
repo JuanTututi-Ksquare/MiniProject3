@@ -3,10 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const http_1 = __importDefault(require("http"));
 const express_1 = __importDefault(require("express"));
+const dotenv_1 = __importDefault(require("dotenv"));
+const cors_1 = __importDefault(require("cors"));
+dotenv_1.default.config();
 const app = (0, express_1.default)();
-const server = http_1.default.createServer(app);
 const PORT = 5500;
 let transactionHistory = [];
 let currentBalance = 0;
@@ -24,13 +25,7 @@ const addTransaction = (amount, description) => {
 };
 //------------------------------End Points-----------------------------
 app.use(express_1.default.json());
-app.use((_, res, next) => {
-    res.set("Access-Control-Allow-Credentials", "true");
-    res.set("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
-    res.set("Access-Control-Allow-Headers", "Content-Type");
-    res.set("Access-Control-Allow-Methods", "GET, POST");
-    next();
-});
+app.use((0, cors_1.default)());
 app.get("/v1/balance", (req, res) => {
     res.json({ currentBalance });
 });
@@ -51,6 +46,6 @@ app.post("/v1/clear", (req, res) => {
     console.log(transactionHistory);
     res.send("Cleared");
 });
-server.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log("server running on port " + PORT);
 });

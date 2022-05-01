@@ -1,8 +1,10 @@
-import http from "http";
 import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+dotenv.config()
+
 
 const app = express();
-const server = http.createServer(app);
 const PORT = 5500;
 let transactionHistory: Object[] = [];
 let currentBalance: number = 0;
@@ -21,14 +23,8 @@ const addTransaction = (amount: number, description: string): boolean => {
 };
 //------------------------------End Points-----------------------------
 app.use(express.json());
+app.use(cors());
 
-app.use((_, res, next) => {
-  res.set("Access-Control-Allow-Credentials", "true");
-  res.set("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
-  res.set("Access-Control-Allow-Headers", "Content-Type");
-  res.set("Access-Control-Allow-Methods", "GET, POST");
-  next();
-});
 
 app.get("/v1/balance", (req: express.Request, res: express.Response) => {
   res.json({ currentBalance });
@@ -52,6 +48,6 @@ app.post("/v1/clear", (req, res) => {
   res.send("Cleared");
 });
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log("server running on port " + PORT);
 });
