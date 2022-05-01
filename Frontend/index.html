@@ -21,17 +21,19 @@
           <form>
             <div class="description">
               <label for="description">
-                <h3>Description</h3>
+                <h3>Description *</h3>
               </label>
               <textarea class="input-border desc-input" rows="3"></textarea>
             </div>
+            <p class="warning warning-description hidden">Description is required to create the transaction</p>
             <p class="grays">
               Please use negative numbers for withdrawals only.
             </p>
             <div class="amount">
-              <label for="amount"><h3>Amount</h3></label>
+              <label for="amount"><h3>Amount *</h3></label>
               <input class="input-border amount-input" type="number" />
             </div>
+              <p class="warning warning-amount hidden">Amount is required to create the transaction</p>
             <br />
             <div class="buttons-container">
               <button type="button" class="balance btn-hover">Show Balance</button>
