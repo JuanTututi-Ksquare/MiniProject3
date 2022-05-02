@@ -28,11 +28,12 @@ https://juantututi-ksquare.github.io/MiniProject3/
 > https://budget-app-itk.herokuapp.com/v1/balance
 
 ## Post
-> https://budget-app-itk.herokuapp.com/v1/transaction 
-> ```json
->  "balance": number,
->  "description": string
-> ```
+> https://budget-app-itk.herokuapp.com/v1/transaction
+ 
+```json
+"balance": number,
+"description": string
+```
 
 > https://budget-app-itk.herokuapp.com/v1/clear
 
