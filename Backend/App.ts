@@ -3,9 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 dotenv.config()
 
-
 const app = express();
-const PORT = 5500;
+const PORT = process.env.PORT;
 let transactionHistory: Object[] = [];
 let currentBalance: number = 0;
 
@@ -17,7 +16,6 @@ const addTransaction = (amount: number, description: string): boolean => {
     currentBalance += amount;
     transactionHistory.push(objTransaction);
     console.log(transactionHistory);
-
     return true;
   }
 };
@@ -44,7 +42,6 @@ app.post("/v1/transaction", (req, res) => {
 app.post("/v1/clear", (req, res) => {
   currentBalance = 0;
   transactionHistory = [];
-  console.log(transactionHistory);
   res.send("Cleared");
 });
 

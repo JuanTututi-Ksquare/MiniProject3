@@ -5,7 +5,11 @@
   "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ."
+    "start": "node ./dist/App.js",
+    "build": "rm -rf ./dist && tsc"
+  },
+  "engines": {
+    "node": "16.x"
   },
   "keywords": [],
   "author": "",
