@@ -25,7 +25,7 @@
 
 ## Post
 > https://budget-app-itk.herokuapp.com/v1/transaction 
-> ````json
+> ```json
 >  "balance": number,
 >  "description": string
 > ```
