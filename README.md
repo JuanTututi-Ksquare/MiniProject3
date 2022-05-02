@@ -14,3 +14,25 @@
 | The app must have a form element that will have the following fields 'Description' of type text and 'Amount' of type number |    |  X    |
 | The app must have a label that explains to the user what the difference between positive and negative numbers is |     |   X  |
 | The app must have a clickable element that will send the Transaction form to the API and update the balance afterward |  X  |      |
+
+
+# Heroku git Url https://git.heroku.com/budget-app-itk.git
+
+
+# EndPonints:
+## Get
+> https://budget-app-itk.herokuapp.com/v1/balance
+
+## Post
+> https://budget-app-itk.herokuapp.com/v1/transaction 
+> ````json
+>  "balance": number,
+>  "description": string
+> ```
+
+> https://budget-app-itk.herokuapp.com/v1/clear
+
+
+
+
+
