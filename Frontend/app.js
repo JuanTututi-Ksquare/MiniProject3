@@ -7,8 +7,7 @@ const descWarning = document.querySelector(".warning-description");
 const amountWarning = document.querySelector(".warning-amount");
 
 balanceButton.addEventListener("click", (event) => {
-    ;
-    getBalance()
+    getBalance();
 });
 
 transactionButton.addEventListener("click", () => createTransaction());
@@ -18,7 +17,7 @@ const getBalance = async () => {
         method: "GET",
         headers: { "content-type": "application/json" },
     };
-    const data = await fetch("http://localhost:5500/v1/balance", options);
+    const data = await fetch("https://budget-app-itk.herokuapp.com/v1/balance", options);
     const res = await data.json();
     changeBalance(res);
 };
@@ -28,7 +27,7 @@ const clearBalance = async () => {
         method: "POST",
         headers: { "content-type": "application/json" },
     };
-    await fetch("http://localhost:5500/v1/clear", options);
+    await fetch("https://budget-app-itk.herokuapp.com/v1/clear", options);
 };
 
 const createTransaction = async () => {
@@ -57,7 +56,7 @@ const createTransaction = async () => {
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ balance, description }),
         };
-        await fetch("http://localhost:5500/v1/transaction", options);
+        await fetch("https://budget-app-itk.herokuapp.com/v1/transaction", options);
         getBalance();
         clearInput();
     }
@@ -74,5 +73,4 @@ const clearInput = () => {
 
 window.onload = () => {
     clearBalance();
-    getBalance();
 };
