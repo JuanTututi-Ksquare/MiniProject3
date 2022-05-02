@@ -16,10 +16,14 @@
 | The app must have a clickable element that will send the Transaction form to the API and update the balance afterward |  X  |      |
 
 
-# Heroku git Url https://git.heroku.com/budget-app-itk.git
+# Heroku git Url 
+https://git.heroku.com/budget-app-itk.git
+
+# Live Version (Github Pages)
+https://juantututi-ksquare.github.io/MiniProject3/
 
 
-# EndPoints:
+# EndPoints
 ## Get
 > https://budget-app-itk.herokuapp.com/v1/balance
 
