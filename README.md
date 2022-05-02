@@ -19,7 +19,7 @@
 # Heroku git Url https://git.heroku.com/budget-app-itk.git
 
 
-# EndPonints:
+# EndPoints:
 ## Get
 > https://budget-app-itk.herokuapp.com/v1/balance
 
